@@ -2,10 +2,16 @@ import SwiftUI
 
 struct TripListView: View {
   @ObservedObject var presenter: TripListPresenter
-    
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+  
+  var body: some View {
+    List {
+      ForEach (presenter.trips, id: \.id) { item in
+        TripListCell(trip: item)
+          .frame(height: 240)
+      }
     }
+  }
+  
 }
 
 struct TripListView_Previews: PreviewProvider {

@@ -21,6 +21,9 @@ struct TripListView_Previews: PreviewProvider {
       let model = DataModel.sample
       let interactor = TripListInteractor(model: model)
       let presenter = TripListPresenter(interactor: interactor)
-      return TripListView(presenter: presenter)
+      return NavigationView {
+        TripListView(presenter: presenter)
+      }
+      
     }
 }

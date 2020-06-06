@@ -26,5 +26,9 @@ class TripListPresenter: ObservableObject {
     interactor.addNewTrip()
   }
   
+  func deleteTrip(_ index: IndexSet) {
+    interactor.deleteTrip(index)
+  }
+  
 }
 

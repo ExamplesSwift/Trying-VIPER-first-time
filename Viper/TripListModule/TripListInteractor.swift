@@ -11,4 +11,8 @@ class TripListInteractor {
     model.pushNewTrip()
   }
   
+  func deleteTrip(_ index: IndexSet) {
+    model.trips.remove(atOffsets: index)
+  }
+  
 }

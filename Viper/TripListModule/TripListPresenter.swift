@@ -1,5 +1,6 @@
 import Foundation
 import Combine
+import SwiftUI
 
 class TripListPresenter: ObservableObject {
   private let interactor: TripListInteractor
@@ -15,5 +16,15 @@ class TripListPresenter: ObservableObject {
       .assign(to: \.trips, on: self)
     .store(in: &cancellables)
   }
+  
+  func makeAddNewButton() -> some View {
+    Button(action: addNewTrip) { Image(systemName: "plus")
+    }
+  }
+  
+  func addNewTrip() {
+    interactor.addNewTrip()
+  }
+  
 }
 

@@ -7,4 +7,8 @@ class TripListInteractor {
     self.model = model
   }
   
+  func addNewTrip() {
+    model.pushNewTrip()
+  }
+  
 }

@@ -10,6 +10,8 @@ struct TripListView: View {
           .frame(height: 240)
       }
     }
+    .navigationBarTitle("Roadtrips", displayMode: .inline)
+    .navigationBarItems(trailing: presenter.makeAddNewButton())
   }
   
 }

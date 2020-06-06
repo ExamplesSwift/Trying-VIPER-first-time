@@ -10,6 +10,9 @@ struct TripListView: View {
 
 struct TripListView_Previews: PreviewProvider {
     static var previews: some View {
-        TripListView()
+      let model = DataModel.sample
+      let interactor = TripListInteractor(model: model)
+      let presenter = TripListPresenter(interactor: interactor)
+      return TripListView(presenter: presenter)
     }
 }

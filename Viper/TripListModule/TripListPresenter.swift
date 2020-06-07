@@ -4,6 +4,7 @@ import SwiftUI
 
 class TripListPresenter: ObservableObject {
   private let interactor: TripListInteractor
+  private let router = TripListRouter()
   
   private var cancellables = Set<AnyCancellable>()
   

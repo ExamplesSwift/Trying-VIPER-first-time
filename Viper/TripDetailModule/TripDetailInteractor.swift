@@ -17,5 +17,13 @@ class TripDetailInteractor {
     self.model = model
   }
 
+  func setTripName(_ name: String) {
+    trip.name = name
+  }
+  
+  func save() {
+    model.save()
+  }
+  
 }
 

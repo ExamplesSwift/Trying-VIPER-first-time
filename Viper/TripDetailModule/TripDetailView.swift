@@ -3,9 +3,17 @@ import SwiftUI
 struct TripDetailView: View {
   @ObservedObject var presenter: TripDetailPresenter
   
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+  var body: some View {
+    
+    VStack {
+      TextField("Trip Name", text: presenter.setTripName)
+        .textFieldStyle(RoundedBorderTextFieldStyle())
+        .padding([.horizontal])
     }
+    .navigationBarTitle(Text(presenter.tripName), displayMode: .inline)
+    .navigationBarItems(trailing: Button("Save", action: presenter.save))
+
+  }
 }
 
 struct TripDetailView_Previews: PreviewProvider {

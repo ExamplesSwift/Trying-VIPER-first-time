@@ -6,6 +6,10 @@ class TripDetailPresenter: ObservableObject {
   
   private var cancellable = Set<AnyCancellable>()
   
+  @Published var tripName: String = "No name"
+  let setTripName: Binding<String>
+  
+  
   init(interactor: TripDetailInteractor) {
     self.interactor = interactor
   }

@@ -23,4 +23,10 @@ class TripDetailPresenter: ObservableObject {
       .store(in: &cancellable)
   }
   
+  func save() {
+    interactor.save()
+  }
+  
+  
+  
 }

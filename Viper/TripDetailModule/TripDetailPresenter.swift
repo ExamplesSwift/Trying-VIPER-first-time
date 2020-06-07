@@ -12,6 +12,15 @@ class TripDetailPresenter: ObservableObject {
   
   init(interactor: TripDetailInteractor) {
     self.interactor = interactor
+    
+    setTripName = Binding<String>(
+      get: { interactor.tripName },
+      set: { interactor.setTripName($0) }
+    )
+    
+    interactor.tripNamePublisher
+      .assign(to: \.tripName, on: self)
+      .store(in: &cancellable)
   }
   
 }
